@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RCE Demonstration</title>
+    <title>RCE Demonstration - Results</title>
     <style>
         /* General styles */
         body {
@@ -33,51 +33,53 @@
             margin-bottom: 1rem;
         }
 
-        /* Form styles */
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Input styles */
-        input[type="text"] {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+        /* Results styles */
+        .results {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
         }
 
         /* Button styles */
-        input[type="submit"] {
-            width: 50%;
+        button {
             background-color: #007BFF;
             color: #fff;
             font-weight: bold;
-            padding: 0.5rem;
+            padding: 0.5rem 1rem;
             cursor: pointer;
             border: none;
             border-radius: 4px;
             transition: 0.3s;
         }
 
-        input[type="submit"]:hover {
+        button:hover {
             background-color: #0056B3;
             transition: 0.3s;
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+
+        th, td {
+            padding: 0.5rem;
+            text-align: left;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            font-weight: bold;
+            background-color: #f0f0f0;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Get Titles From URL Web-Service</h1>
-        <h3>RCE Vulnerability Demonstration</h3>
-        <form method="post">
-            <label for="url">Enter URL:</label>
-            <input type="text" name="url" id="url" required>
-            <input type="submit" value="Submit">
-        </form>
+    <div class="results">
+        {{ titles|safe }}
     </div>
 </body>
 
