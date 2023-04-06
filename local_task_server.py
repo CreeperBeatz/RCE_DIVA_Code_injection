@@ -3,12 +3,6 @@ from flask import Flask, request
 app = Flask(__name__)
 
 
-@app.route("/rce", methods=["GET", "POST"])
-def rce():
-    code = request.args.get("code")
-    exec(code)
-    return "Code executed."
-
 @app.route("/create-file", methods=["GET", "POST"])
 def create_file():
     filename = request.args.get("filename")
